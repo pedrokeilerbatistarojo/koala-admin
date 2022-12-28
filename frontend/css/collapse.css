@@ -1,0 +1,1329 @@
+
+/*  estilos generales   */
+
+.collapsible {
+    background: rgb(190,48,90);
+    background: -moz-linear-gradient(90deg, rgba(190,48,90,1) 45%, rgba(64,62,126,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(190,48,90,1) 45%, rgba(64,62,126,1) 100%);
+    background: linear-gradient(90deg, rgba(190,48,90,1) 45%, rgba(64,62,126,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#be305a",endColorstr="#403e7e",GradientType=1);
+
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border-radius: 0.75rem;
+    margin-bottom: 8px;
+}
+/*.active,*/
+.collapsible:hover {
+    background-color: #403E7E;
+    color: #fff;
+}
+/* para ajustar los valores en la misma linea en la pagina de success order */
+ul.wc-item-meta>li p {
+    display: inline; 
+}
+.texto {
+    font-size: 12px !important;
+}
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    margin-left: 0 !important;
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+}
+.img_partes {
+	display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.div_serigrafia {
+    /*padding: 10px !important;*/
+    margin-bottom: -20px !important;
+    margin-left: 10px !important;
+}
+
+body .clearer {
+    clear: both;
+}
+.td_table_logos {
+    background-color: #fff !important;
+}
+.p_text_logo {
+    display: block;
+    margin-top: 30px;
+}
+.bot-hover,
+input[type="button"].flat-buttons:hover,
+input[type="button"].button-calcula_tu_precio:hover {
+    background-color: #006e95;
+    color: #ffffff;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+/* Button Calcula tu precio */
+body.single.single-product input[type="button"][name="calcula_tu_precio"] {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    height: auto;
+    width: 100%;
+    /*width: 210px; !* Para que no se rompa en dos líneas, y lo translade tal cual. *!*/
+    /*margin-left: 50%;*/
+    /*transform: translateX(-50%);*/
+    font-size: 12px;
+    border-radius: 0.75rem!important;
+}
+
+/*  OCULTAR EL BOTON DE AÑADIR AL CARRITO EN LA VISTA DEL PRODUCTO  */
+/*li.product .add_to_cart_button, .single-product form.cart{*/
+/*    display:none !important;*/
+/*}*/
+
+/*.product-quantity*/
+/*.quantity*/
+/*.qty*/
+/*.single_add_to_cart_button*/
+li.product .add_to_cart_button, .qty, .quantity, .product-quantity , .stock.in-stock, .single_add_to_cart_button {
+    display:none !important;
+}
+
+/*  input de valores del formulario */
+#input_cantidad_seleccionada {
+    display: none !important;
+}
+#input_posiciones_seleccionadas {
+    display: none !important;
+}
+#input_serigrafias {
+    display: none !important;
+}
+#precios_serigrafias {
+    display: none !important;
+}
+#input_fecha_seleccionada {
+    display: none !important;
+}
+#input_precio_producto_final {
+    display: none !important;
+}
+
+
+/*  seccion cuantos */
+.btn_cuantos {
+    background-color: #fff !important;
+    color: #777 !important;
+    line-height: 30px !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    padding: 0 12px !important;
+    border: 1px solid #0a4b78 !important;
+    /*margin-right: 35px !important;*/
+    height: 32px !important;
+    /*width: 90px !important;*/
+}
+.btn_cuantos:hover {
+    background-color: #0a4b78 !important;
+    color: white !important;
+    box-shadow: 0 0 35px rgba(140, 152, 164, 0.125) !important;
+}
+.otra_cantidad {
+    height: 32px !important;
+    /*max-width: 25em !important;*/
+    /*width: 12em !important;*/
+    float: right;
+}
+.confirmar_cantidad {
+    background-color: #0a4b78 !important;
+    color: #fff !important;
+    border-radius: 0.75em !important;
+    float: right;
+    /*margin-top: 45px !important;*/
+    /*margin-right: -14em !important;*/
+}
+/*  termina seccion cuantos */
+
+/*  seccion partes  */
+.btn_partes {
+    background-color: #0a4b78 !important;
+    color: #fff !important;
+    /*width: 200px !important;*/
+    /*margin: 5px 25px 5px 5px !important;*/
+    /*height: 40px !important;*/
+    border-radius: 0.50em !important;
+}
+.radio {
+    margin-left: 0 !important;
+    margin-bottom: 15px !important;
+}
+.confirmar_estampado {
+    background-color: #0a4b78 !important;
+    color: #fff !important;
+    float: right;
+    border-radius: 0.75em !important;
+    margin-right: 10px !important;
+}
+.sin_estampado {
+    float: right;
+    border-radius: 0.75em !important;
+    margin-right: 0 !important;
+}
+
+@media (max-width: 600px){
+    .sin_estampado {
+        font-size: 10px!important;
+    }
+    .confirmar_estampado{
+        font-size: 10px!important;
+    }
+}
+
+@media (max-width: 300px){
+    .button-calcula_tu_precio {
+        font-size: 10px!important;
+    }
+}
+
+@media (max-width: 576px){
+    .sin_estampado {
+        float: none!important;
+        display: flex!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        width: 100%;
+    }
+    .confirmar_estampado{
+        float: none!important;
+        display: flex!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .sin_estampado {
+        width: 100%!important;
+        float: none!important;
+    }
+    .confirmar_estampado{
+        width: 100%!important;
+        float: none!important;
+    }
+}
+
+.reset_variations{
+    background: white!important;
+}
+
+
+.cont_ser_resp {
+    column-count: 2;
+}
+#contenedor_partes {
+    /*margin-bottom: 50px !important;*/
+}
+/*  termina seccion partes  */
+
+/*  seccion cuando  */
+.timeline-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.timeline-container .timeline {
+    display: table;
+    margin-bottom: 2.25rem;
+    width: 100%;
+}
+.timeline-container .timeline li.shipping-select input[type="text"] {
+    width: 0;
+    height: 20px;
+    opacity: 0;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+.timeline-container .timeline li.shipping-select div.check>i {
+    color: rgb(0, 153, 0);
+    font-size: 32px;
+    display: none;
+}
+.timeline-container .timeline li.shipping-select div.check>i.selected {
+    display: inline-block;
+    margin-left: 1px !important;
+}
+.timeline-container .timeline li>div.contentbottom {
+    width: 120% !important;
+}
+/*  termina seccion cuando  */
+
+
+/*  seccion calculadora     */
+#tablero-marcador1 {
+    /*display: grid !important;*/
+    /*grid-template-columns: 6% 120px 10% 120px 10% 260px;*/
+}
+#p_unidades_pre {
+    float: right;
+    width: 60px !important;
+}
+.simb-operador {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-size: 4rem;
+    margin-top: -10px;
+}
+#p_txt_iva {
+    /*max-width: 240px !important;*/
+    /*margin: 0 !important;*/
+}
+#calcu_boton_col_6 {
+    flex: none !important;
+    max-width: 100%;
+}
+#p_txt_preciounitario_pre {
+    margin-top: -15px !important;
+}
+#preconfirmar {
+    background-color: #0a4b78;
+    color: #fff;
+    border-radius: 0.75em;
+    padding: 12px 30px;
+    border-color: transparent !important;
+
+}
+#confirmar_pedido_koala {
+    background-color: #0a4b78;
+    color: #fff;
+    border-radius: 0.75em;
+    padding: 17px 43px;
+    border-color: transparent !important;
+    line-height: 20px !important;
+    text-transform: none !important;
+
+}
+#preconfirmar:hover {
+    background-color: #BE305A;
+}
+#confirmar_pedido_koala:hover {
+    background-color: #BE305A;
+}
+.marcador {
+    border: 3px solid #BE305A;
+    text-align: right;
+    padding: 10px;
+    background-color: transparent;
+    min-height: 120px;
+    height: 90px !important;
+}
+.col-0 {
+    display: inherit;
+}
+.price-marcador {
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    font-size: 2.6rem;
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+}
+#calcu_boton_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.finalpricelabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+#preciototalfinal_pre {
+    color: #006e95;
+}
+/*  termina seecion calculadora   */
+
+
+/*  seccion repartir unidades   */
+#seccion_repartir_unidades {
+    background: #f4f4f4 !important;
+    color: black !important;
+}
+/*  termina la seccion repartir unidades   */
+
+/*  seccion subir logo  */
+.custom-file-upload {
+    /*margin-right: 20em;*/
+    background-color: #0a4b78 !important;
+    color: #fff;
+    display: inline-block;
+    padding: 6px 20px;
+    cursor: pointer;
+    border-radius: 0.75em;
+    margin-top: 20px;
+}
+.td_table_logos {
+    background-color: #fff !important;
+}
+.p_text_logo {
+    display: block;
+    margin-top: 30px;
+}
+/*  termina la seccion de subir logo    */
+
+/*  seccion extras  */
+#seccion_extras {
+    background: #f4f4f4 !important;
+    color: black !important;
+}
+/*  termina seccion extras  */
+
+/*  carrito */
+#pedir_presupuesto {
+    margin-bottom: 10px !important;
+}
+/*  termina carrito */
+
+/*  formulario pedir presupuesto    */
+/*#container_form {*/
+/*    max-width: 1140px;*/
+/*}*/
+/*#contenedor_pedir_presup {*/
+/*    display: grid;*/
+/*    grid-template-columns: 400px 400px 400px;*/
+/*}*/
+/*#content_form_presup {*/
+/*    width: 100%;*/
+/*}*/
+.input_formulario {
+	width: 300px;
+    border-radius: 4px;
+    margin: 5px 0;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    height: 36px;
+}
+.select_input_formulario {
+	width: 300px;
+    border-radius: 4px;
+    margin: 5px 0;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    height: 36px;
+}
+.h2_contenedor_tabla {
+    margin-left: -70px;
+}
+.contenedor_tabla {
+    width: 80% !important;
+    margin-top: 30px;
+    margin-left: -70px;
+    border-style: solid none none none;
+    border-width: 1px;
+    border-color: #0a4b78;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
+.span_tabla_presup {
+    margin-left: 10px;
+}
+#subtotal_span {
+    float: right !important;
+    margin-right: 10px;
+}
+.span_label_tabla_subtotal {
+    /*margin-left: -10px;*/
+}
+.span_value_tabla_subtotal {
+    /*margin-left: -10px;*/
+    float: right;
+}
+.total_final {
+    font-size: 18px;
+    color: #0a4b78;
+}
+.contenedor_tarjeta_presup {
+    margin-left: -50px;
+    width: 80% !important;
+}
+#contenedor_btn_obtener_presupuesto {
+	margin-top: -30px;
+}
+.boton_pedir_presupuesto {
+    cursor: pointer;
+    background-color: #0a4b78;
+    color: white;
+    font-weight: 600;
+    height: 45px;
+    font-size: 1.2rem;
+    border-radius: 0.75em;
+    padding: 0 60px;
+	width: 25em;
+}
+.boton_pedir_presupuesto:hover {
+    background-color: #BE305A;
+}
+/*  termina formulario pedir presupuesto    */
+
+
+/*======================================================================================================*/
+/* 											max-width: 900px											*/
+/*======================================================================================================*/
+
+
+/*======================================================================================================*/
+/* 												MOVIL													*/
+/*======================================================================================================*/
+@media screen and (max-width: 768px) {
+    /*  termina la seccion partes  */
+
+    /*  seccion cuando */
+    .timeline-container {
+        margin-top: 0;
+        margin-left: 70px;
+    }
+    /*======================================================================================================*/
+    /* 								ul: de toda la linea del tiempo 										*/
+    /*======================================================================================================*/
+    .timeline-container .timeline {
+        display: block;
+        list-style-type: none;
+        width: 100%;
+        padding: 0;
+        table-layout: fixed;
+        margin-top: 50px;
+    }
+    ul, ol {
+        margin-right: 0 !important;
+    }
+    .timeline {
+        margin-left: -5em !important;
+        margin-bottom: 1.41575em !important;
+    }
+    /*======================================================================================================*/
+    /* Los <li> (de la primera bola marcable) <li class="shipping-select" id="shipping_premium" style="">	*/
+    /*======================================================================================================*/
+    .timeline-container .timeline li.shipping-select {
+        cursor: pointer;
+    }
+    .timeline-container .timeline li {
+        display: block;
+        border-left: 2px solid #ddd;
+        border-top: 0;
+        padding: 30px;
+        text-align: left;
+        position: relative;
+        transition: all 200ms ease-in;
+        height: 160px;
+    }
+    li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
+    .timeline-container .timeline li>div.contentbottom {
+        text-align: left;
+        margin-top: -15px;
+        /*width: 170px !important;*/
+        margin-left: 0 !important;
+    }
+    .timeline-container .timeline li.shipping-select div.contentbottom {
+        margin-top: -10px;
+        min-height: 50px;
+    }
+    .timeline-container .timeline li.shipping-select::before {
+        content: "";
+        width: 45px;
+        height: 45px;
+        background-color: #fff;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        position: absolute;
+        top: -23px;
+        left: -24px;
+        transition: all 200ms ease-in;
+    }
+    /*======================================================================================================*/
+    /* 								Bola marcable :before 													*/
+    /*======================================================================================================*/
+    .timeline-container .timeline li::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: #ddd;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        position: absolute;
+        top: -10px;
+        left: -8px;
+        transition: all 200ms ease-in;
+    }
+    /*======================================================================================================*/
+    /* 							div: <div class="contenttop"> 												*/
+    /*======================================================================================================*/
+    .timeline-container .timeline li.shipping-select div.contenttop {
+        font-size: 1.2em;
+        font-weight: 700;
+        text-align: left;
+    }
+    .timeline-container .timeline li div.contenttop {
+        top: -15px;
+        left: 0;
+        position: absolute;
+        height: 30px;
+        text-align: left;
+        margin-left: 30px;
+        vertical-align: text-bottom;
+        width: 100%;
+    }
+    /*======================================================================================================*/
+    /* 							div: del texto de abajo <div class="contentbottom">							*/
+    /*======================================================================================================*/
+    .timeline-container .timeline li div.contentbottom {
+        text-align: left;
+        margin-top: -15px;
+    }
+    /*======================================================================================================*/
+    /* 							div: del check mark <div class="check">							*/
+    /*======================================================================================================*/
+    .timeline-container .timeline li.shipping-select div.check {
+        top: -13px;
+        position: absolute;
+        left: -18px;
+    }
+    /*.timeline-container .timeline li.shipping-select div.check > i {
+		display: none;
+	}*/
+    /*  termina la seccion cuando */
+}
+
+@media screen and (max-width: 600px) {
+    /*  seccion cuantos */
+    .color_es {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #imgColor {
+        margin-left: -8px !important;
+    }
+    .btn_cuantos {
+        width: 100% !important;
+        margin-bottom: 5px !important;
+        border: 1px solid #777 !important;
+        /*margin-right: 40px !important;*/
+    }
+    .otra_cantidad {
+        /*width: 100% !important;*/
+        /*max-width: 40em !important;*/
+    }
+    .otra_cantidad::placeholder {
+        text-align: center;
+    }
+    .confirmar_cantidad {
+        width: 100% !important;
+        margin-top: 10px !important;
+        margin-right: 0 !important;
+    }
+    /*  termina la seccion cuantos */
+
+    /*  seccion partes  */
+    .btm_partes_row {
+        margin-bottom: 20px !important;
+    }
+    .btn_partes {
+        position: relative;
+        width: 100% !important;
+    }
+    .sin_estampado {
+        width: 100% !important;
+        margin-bottom: 5px !important;
+        float: none !important;
+    }
+    .confirmar_estampado {
+        width: 100% !important;
+        float: none !important;
+    }
+
+    /*  seccion calculadora  */
+    .cajas_sec_calc {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 1px !important;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        max-width: 50% !important;
+        flex: 0 0 50% !important;
+    }
+    #primer_div_sec_calc {
+        display: none !important;
+    }
+    #caja_x_sec_calc {
+        display: none !important;
+    }
+    .marcador {
+        text-align: right !important;
+        padding: 10px !important;
+        min-height: 150px !important;
+    }
+    #p_txt_preciounitario_pre {
+        margin-top: -10px !important;
+    }
+    #div_sec_calc_igual {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: -5px !important;
+    }
+    #div_sec_calc_imp_mas_boton {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    #calcu_boton_col_6 {
+        /*flex: 0 0 50% !important;*/
+        /*max-width: 50% !important;*/
+        /*position: relative;*/
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    #preconfirmar {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        min-height: 60px !important;
+        border-radius: 0 !important;
+        padding: 7px 24px !important;
+        vertical-align: middle !important;
+    }
+    #confirmar_pedido_koala {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        min-height: 60px !important;
+        padding: 7px 24px !important;
+        vertical-align: middle !important;
+        border-radius: 0.75em !important;
+        font-size: 16px !important;
+
+    }
+    #p_txt_iva {
+        margin-bottom: 10px !important;
+        /*margin-top: -20px !important;*/
+    }
+    #tablero-marcador1 {
+        margin-top: 10px !important;
+        display: flex !important;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    /*  termina la seccion calculadora  */
+
+    /*  seccion repartir unidades */
+    #tabla-tallas {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        max-width: 100%;
+    }
+    .th_tabla_tallas {
+        background-color: #fff !important;
+        padding: 0 !important;
+        /*margin-right: -10px !important;*/
+    }
+    .td_tabla_tallas {
+        background-color: #fff !important;
+        padding: 0 !important;
+        margin-right: -10px !important;
+    }
+    #scrol_horizontal {
+        overflow:hidden;
+        overflow-x: hidden;
+        clear:both;
+        width:100%;
+    }
+    .boton-formulario-details-2 {
+        width: 100% !important;
+        margin-bottom: 5px !important;
+    }
+    #confirmar-tallas {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    .size_input {
+        padding: 1px 2px !important;
+        margin-right: 5px;
+        max-width: 40px !important;
+        min-height: 20px !important;
+    }
+    .botones_secciones_calc_succ {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    .botones_secciones_calc_canc {
+        width: 100% !important;
+    }
+    .oculto-movil {
+        display: none !important;
+    }
+    /*  termina seccion repartir unidades  */
+
+    /*  seccion subir logo  */
+    .custom-file-upload {
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+    }
+    .p_text_logo {
+        margin-top: 0 !important;
+    }
+    /*  termina seccion subir logo  */
+
+    /*   seccion pedir presupuesto   */
+    #contenedor_pedir_presup {
+        display: grid;
+        grid-template-columns: 300px;
+    }
+    #content_form_presup {
+        margin-left: 10px;
+    }
+    .contenedor_tarjeta_presup {
+        margin-left: 10px;
+        width: 100% !important;
+        margin-top: 20px;
+    }
+    .h2_contenedor_tabla {
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .contenedor_tabla {
+        width: 100% !important;
+        margin-left: 10px;
+
+    }
+    /*  termina la seccion pedir presupuesto  */
+
+    /*  footer  */
+    #footer-widgets {
+        padding: 0 !important;
+    }
+    /*  termina footer  */
+}
+
+/*======================================================================================================*/
+/* 												TABLES										            */
+/*======================================================================================================*/
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait){
+
+    /*	seccion cuantos	*/
+    .btn_cuantos {
+        /*width: 10% !important;*/
+        /*margin-right: 0.5% !important;*/
+    }
+    .otra_cantidad {
+        /*max-width: 120px !important;*/
+        /*max-width: 40% !important;*/
+        /*width: 20% !important;*/
+    }
+    .confirmar_cantidad {
+        float: right !important;
+        margin-top: 3% !important;
+        /*margin-right: -20% !important;*/
+    }
+
+    /*	seccion personalizalo	*/
+    #contenedor_partes {
+        /*display: grid !important;*/
+        /*grid-template-columns: 33% 33% 33%;*/
+    }
+    .btn_partes {
+        width: 100% !important;
+        margin-right: 10% !important;
+    }
+    .img_partes {
+        padding-left: 10px !important;
+    }
+
+    /*  seccion cuando  */
+    .timeline-container {
+        margin-top: 70px;
+        margin-left: 0 !important;
+        /*margin-right: 50px !important;*/
+    }
+    ul, ol { margin-right: 0 !important; }
+    .timeline-container .timeline {
+        display: table;
+        margin-bottom: 2.25rem;
+    }
+    .timeline-container .timeline li {
+        display: table-cell;
+        border-left: none;
+        border-top: 2px solid #ddd;
+        padding: 25px 2% 0;
+        text-align: center;
+        position: relative;
+        height: 100px;
+    }
+    .timeline-container .timeline li>div.contentbottom {
+        margin-top: 0;
+        margin-left: 0;
+        min-height: auto;
+        text-align: center;
+        top: 0;
+        position: relative;
+        /*width: 100px !important;*/
+    }
+    .timeline-container .timeline li.shipping-select div.contentbottom {
+        text-align: center;
+        margin-top: 0;
+        margin-left: 0;
+        min-height: auto;
+        /*top: 10px;*/
+        position: relative;
+    }
+    .timeline-container .timeline li.shipping-select::before {
+        content: "";
+        width: 45px;
+        height: 45px;
+        background-color: #fff;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        position: absolute;
+        top: -24px;
+        left: 41%;
+        transition: all 400ms ease-in;
+    }
+    .timeline-container .timeline li::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: #ddd;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        transition: all 200ms ease-in;
+        position: absolute;
+        top: -10px;
+        left: 46%;
+    }
+    .timeline-container .timeline li.shipping-select div.contenttop {
+        top: -58px;
+        left: 12px;
+        position: absolute;
+        text-align: center;
+        height: 30px;
+        vertical-align: text-bottom;
+        width: 100%;
+        margin: 0;
+    }
+    .timeline-container .timeline li div.contenttop {
+        top: -88px;
+        text-align: center;
+        margin-left: 10px;
+        height: 30px;
+        position: relative;
+    }
+    .timeline-container .timeline li.shipping-select div.check {
+        position: absolute;
+        top: -15px;
+        left: 44%;
+    }
+    .timeline-container .timeline li.shipping-select div.check>i.selected {
+        display: inline-block;
+        margin-left: 3px !important;
+    }
+    .ajustar_texto {
+        margin-top: -28px !important;
+    }
+    #ultimo_contentbottom {
+        /*margin-top: 5px !important;*/
+        padding-top: 6px !important;
+        display: flex;
+    }
+    /*  termina la seccion cunado   */
+
+    /*	seccion calculadora	*/
+    #tablero-marcador1 {
+        /*display: grid !important;*/
+        /*grid-template-columns: 10% 120px 10% 120px 10% 260px;*/
+    }
+    #p_unidades_pre {
+        float: right;
+        width: 60px !important;
+    }
+    .simb-operador {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #p_txt_iva {
+        max-width: 240px !important;
+        /*margin: 0 !important;*/
+    }
+    #calcu_boton_col_6 {
+        flex: none !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: portrait){
+
+    /*	seccion cuantos	*/
+    .btn_cuantos {
+        /*width: 10% !important;*/
+        /*margin-right: 0.5% !important;*/
+    }
+    .otra_cantidad {
+        /*max-width: 120px !important;*/
+        /*max-width: 40% !important;*/
+        /*width: 20% !important;*/
+    }
+    .confirmar_cantidad {
+        float: right !important;
+        margin-top: 5% !important;
+        /*margin-right: -20% !important;*/
+    }
+
+    /*	seccion personalizalo	*/
+    #contenedor_partes {
+        /*display: grid !important;*/
+        /*grid-template-columns: 25% 25% 25% 25%;*/
+    }
+    .btn_partes {
+        width: 100% !important;
+        margin-right: 10% !important;
+    }
+    .img_partes {
+        padding-left: 10px !important;
+    }
+
+    /*  seccion cuando  */
+    .timeline-container {
+        margin-top: 70px;
+        margin-left: 0 !important;
+        /*margin-right: 50px !important;*/
+    }
+    ul, ol { margin-right: 0 !important; }
+    .timeline-container .timeline {
+        display: table;
+        margin-bottom: 2.25rem;
+    }
+    .timeline-container .timeline li {
+        display: table-cell;
+        border-left: none;
+        border-top: 2px solid #ddd;
+        padding: 25px 2% 0;
+        text-align: center;
+        position: relative;
+    }
+    .timeline-container .timeline li>div.contentbottom {
+        margin-top: 0;
+        margin-left: 0;
+        min-height: auto;
+        text-align: center;
+        top: 0;
+        position: relative;
+        /*width: 100px !important;*/
+    }
+    .timeline-container .timeline li.shipping-select div.contentbottom {
+        text-align: center;
+        margin-top: 0;
+        margin-left: 0;
+        min-height: auto;
+        /*top: 10px;*/
+        position: relative;
+    }
+    .timeline-container .timeline li.shipping-select::before {
+        content: "";
+        width: 45px;
+        height: 45px;
+        background-color: #fff;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        position: absolute;
+        top: -24px;
+        left: 41%;
+        transition: all 400ms ease-in;
+    }
+    .timeline-container .timeline li::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: #ddd;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        transition: all 200ms ease-in;
+        position: absolute;
+        top: -10px;
+        left: 46%;
+    }
+    .timeline-container .timeline li.shipping-select div.contenttop {
+        top: -58px;
+        left: 12px;
+        position: absolute;
+        text-align: center;
+        height: 30px;
+        vertical-align: text-bottom;
+        width: 100%;
+        margin: 0;
+    }
+    .timeline-container .timeline li div.contenttop {
+        top: -88px;
+        text-align: center;
+        margin-left: 10px;
+        height: 30px;
+        position: relative;
+    }
+    .timeline-container .timeline li.shipping-select div.check {
+        position: absolute;
+        top: -15px;
+        left: 44%;
+    }
+    .timeline-container .timeline li.shipping-select div.check>i.selected {
+        display: inline-block;
+        margin-left: 3px !important;
+    }
+    .ajustar_texto {
+        margin-top: -28px !important;
+    }
+    #ultimo_contentbottom {
+        /*margin-top: 5px !important;*/
+        padding-top: 6px !important;
+        display: flex;
+    }
+    /*  termina la seccion cunado   */
+
+    /*	seccion calculadora	*/
+    #tablero-marcador1 {
+        /*display: grid !important;*/
+        /*grid-template-columns: 15% 160px 12% 160px 12% 260px;*/
+        margin-top: 20px;
+    }
+    #p_unidades_pre {
+        float: right;
+        width: 60px !important;
+    }
+    .simb-operador {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #p_txt_iva {
+        max-width: 240px !important;
+        /*margin: 0 !important;*/
+    }
+    #calcu_boton_col_6 {
+        flex: none !important;
+    }
+}
+
+
+/*======================================================================================================*/
+/* 									TERMINAN LOS TABLES										            */
+/*======================================================================================================*/
+
+
+
+/*======================================================================================================*/
+/* 									                PC										            */
+/*======================================================================================================*/
+
+@media only screen and (min-width: 1024px) {
+
+    /*	seccion cuantos	*/
+    .btn_cuantos {
+        /*width: 10% !important;*/
+        /*margin-right: 0.5% !important;*/
+    }
+    .otra_cantidad {
+        /*max-width: 120px !important;*/
+        /*max-width: 40% !important;*/
+        /*width: 20% !important;*/
+    }
+    .confirmar_cantidad {
+        float: right !important;
+        margin-top: 5% !important;
+        /*margin-right: -20% !important;*/
+    }
+
+    /*	seccion personalizalo	*/
+    #contenedor_partes {
+        /*display: grid !important;*/
+        /*grid-template-columns: 25% 25% 25% 25%;*/
+    }
+    .btn_partes {
+        width: 100% !important;
+        margin-right: 10% !important;
+    }
+    .img_partes {
+        padding-left: 10px !important;
+    }
+
+    /*  seccion cuando  */
+    .timeline-container {
+        margin-top: 70px;
+        margin-left: 0 !important;
+        /*margin-right: 50px !important;*/
+    }
+    ul, ol { margin-right: 0 !important; }
+    .timeline-container .timeline {
+        display: table;
+        margin-bottom: 2.25rem;
+    }
+    .timeline-container .timeline li {
+        display: table-cell;
+        border-left: none;
+        border-top: 2px solid #ddd;
+        padding: 25px 2% 0;
+        text-align: center;
+        position: relative;
+    }
+    .timeline-container .timeline li>div.contentbottom {
+        margin-top: 0;
+        margin-left: 0;
+        min-height: auto;
+        text-align: center;
+        top: 0;
+        position: relative;
+        /*width: 170px !important;*/
+    }
+    .timeline-container .timeline li.shipping-select div.contentbottom {
+        text-align: center;
+        margin-top: 0;
+        margin-left: 0;
+        min-height: auto;
+        /*top: 10px;*/
+        position: relative;
+    }
+    .timeline-container .timeline li.shipping-select::before {
+        content: "";
+        width: 45px;
+        height: 45px;
+        background-color: #fff;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        position: absolute;
+        top: -24px;
+        left: 41%;
+        transition: all 400ms ease-in;
+    }
+    .timeline-container .timeline li::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: #ddd;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        transition: all 200ms ease-in;
+        position: absolute;
+        top: -10px;
+        left: 46%;
+    }
+    .timeline-container .timeline li.shipping-select div.contenttop {
+        top: -58px;
+        left: 12px;
+        position: absolute;
+        text-align: center;
+        height: 30px;
+        vertical-align: text-bottom;
+        width: 100%;
+        margin: 0;
+    }
+    .timeline-container .timeline li div.contenttop {
+        top: -88px;
+        text-align: center;
+        margin-left: 10px;
+        height: 30px;
+        position: relative;
+    }
+    .timeline-container .timeline li.shipping-select div.check {
+        position: absolute;
+        top: -15px;
+        left: 44%;
+    }
+    .timeline-container .timeline li.shipping-select div.check>i.selected {
+        display: inline-block;
+        margin-left: 3px !important;
+    }
+    .ajustar_texto {
+        margin-top: -28px !important;
+    }
+    #ultimo_contentbottom {
+        /*margin-top: 5px !important;*/
+        padding-top: 6px !important;
+        display: flex;
+    }
+    /*  termina la seccion cunado   */
+
+    /*	seccion calculadora	*/
+    #tablero-marcador1 {
+        /*display: grid !important;*/
+        /*grid-template-columns: 15% 160px 12% 160px 12% 260px;*/
+        margin-top: 20px;
+    }
+    #p_unidades_pre {
+        float: right;
+        width: 60px !important;
+    }
+    .simb-operador {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    #p_txt_iva {
+        max-width: 240px !important;
+        /*margin: 0 !important;*/
+    }
+    #calcu_boton_col_6 {
+        flex: none !important;
+    }
+}
+
+.number-container-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px 10px 0px;
+}
+
+@media (min-width: 400px){
+    .timeline-container .timeline li {
+        height: 100px!important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
