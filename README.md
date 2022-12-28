@@ -1,4 +1,5 @@
 # koala-admin
+### **Worpress Plugin**
 
 **Plugin Name:** Calculadora Koala
 <br>
