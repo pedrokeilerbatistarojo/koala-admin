@@ -9,4 +9,8 @@
 <br>
 **Version:** 1.0.0
 
-**Pro Medios Digitales**
+**Observaciones:**
+<br>
+Antes de activar el plugin verificar que no exista la pagina "Pedir Presupuesto", pues el plugin la genera automaticamente.
+
+**Desarrollado por - Pro Medios Digitales**
