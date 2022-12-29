@@ -56,12 +56,18 @@ function Activar_KoalaAdmin(){
     $post_content = '
             <div id="container_form" class="container">
             <div class="row" id="contenedor_pedir_presup">
-                <div class="col-12 col-sm-6 col-md-4" id="content_form_presup">
+                <div class="col-12">
+                    <h2>Presupuesto</h2>
+                    <p>No estás haciendo la compra, estás pidiendo un presupuesto que te enviaremos por correo electrónico.</p>
+                    <hr>  
+                </div>
+                <div class="col-12 col-sm-6" id="content_form_presup">
                     <div id="checkout-data-form" class="row" data-action="https://garrampa.es/checkout/save/order/">
                     <div class="col-12 shipping-address">
                         <div class="form-content"  data-form="shipping">
+               
                             <h2 class="form-title">Datos de contacto</h2>
-                            <input type="button" class="place-order-button boton_pedir_presupuesto mb-3" id="obtener_presupuesto" value="Obtener Presupuesto" />
+                           
                                 <div class="form-input required">
                                     <input type="email" data-required="1" class="address-field input_formulario" name="email" placeholder="Correo electrónico" value="">
                                 </div>
@@ -152,23 +158,19 @@ function Activar_KoalaAdmin(){
                                 <div class="form-input">
                                     <input type="text" data-required="0" class="address-field input_formulario" name="vat_id" placeholder="NIF / CIF" value="">
                                 </div>
+                              
+                                <input type="button" class="place-order-button boton_pedir_presupuesto my-3" id="obtener_presupuesto" value="Obtener Presupuesto" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="contenedor_tarjeta_presup">
-                        <h2>Presupuesto</h2>
-                        <p>No estás haciendo la compra, estás pidiendo un presupuesto que te enviaremos por correo electrónico.</p>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6">
                     <h2 class="h2_contenedor_tabla">Resumen del pedido</h2>
-                    <div class="contenedor_tabla">
+                    <div class="contenedor_tabla card shadow-sm p-4">
                         <div id="crear_tarjeta_tabla">
                             
                         </div> 
-                        <table>
+                        <table class="mb-0">
                             <tr>
                                 <td><span class="span_label_tabla_subtotal"><strong> Subtotal </strong></span></td>
                                 <td><span class="span_value_tabla_subtotal" id="total_pedido_sin_impuestos"> imp </span></td>
@@ -196,6 +198,7 @@ function Activar_KoalaAdmin(){
             'post_author' => 1,
             'post_type' => 'page'
         );
+
         wp_insert_post( $wordpress_post );
     }
 
@@ -248,7 +251,7 @@ function Mostrar_Contenido(){
 
 
         //  --------------------------------------------------------- //
-//      cambiarle nombre al boton de a;adir
+//      cambiarle nombre al boton de añadir
 //add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_shop_page_add_to_cart_callback' );
 //function woocommerce_shop_page_add_to_cart_callback() {
 //    return __( 'Add to Bag', 'text-domain' );
@@ -274,7 +277,17 @@ function Mostrar_Contenido(){
 
 //  ---------------------------------------------   //
 
-
+add_filter( 'woocommerce_review_order_before_payment', 'get_review_order' );
+function get_review_order(): void
+{
+    echo "<div class='row align-items-center mb-5'>
+                <div class='col-12'>
+                    <div class='alert alert-warning shadow-sm' role='alert'>
+                      <span><strong>No has subido ningún archivo </strong> para las personalizaciones, si quieres, puedes enviarla más tarde al correo a: <a href='mailto:soporte@hola.com'>soporte@hola.com</a></span>
+                    </div>
+                </div>
+           </div>";
+}
 
 //      ---------------------------------------------       //
 //      mostrar boton calcular precio   //

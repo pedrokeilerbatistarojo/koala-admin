@@ -5,7 +5,7 @@ include($path.'wp-load.php');
 global $wpdb;
 
 
-$usuario_autent = $user_login;
+$usuario_autent = $user_login ?? '';
 $id_producto = $_POST['id_prod'];
 $hora_compra = date('dmY-his');
 

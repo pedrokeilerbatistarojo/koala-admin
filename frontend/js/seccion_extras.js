@@ -89,6 +89,7 @@ jQuery(document).ready(function($){
         formData.append('file4',files4);
 
         var url = SubirLogoAjax.url;
+        console.log(url)
         $.ajax({
             type: 'POST',
             url: url,
@@ -180,7 +181,6 @@ jQuery(document).ready(function($){
 
             var iva_pre = $('#iva_pre');
             iva_pre.text(iva);
-
         }
         else{
             var resta_precio_final_precio_embolsado = parseFloat(value_preciototalfinal_pre) - parseFloat(mult_cargo_x_unidades);
@@ -192,7 +192,7 @@ jQuery(document).ready(function($){
             var resta_cargo_embolsado = parseFloat(value_preciounitario_pre) - 0.20;
             preciounitario_pre.innerText = resta_cargo_embolsado;
 
-            var iva_resta = (resta_cargo_embolsado * 21)/100;
+            var iva_resta = (resta_precio_final_precio_embolsado * 21)/100;
             var iva_pre = $('#iva_pre');
             iva_pre.text(iva_resta);
         }

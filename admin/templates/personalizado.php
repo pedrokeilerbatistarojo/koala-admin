@@ -61,7 +61,49 @@ function createPersonalizado($wpdb){
     if(isset($_POST['guardarPersonalizado'])){
         $nombre_personalizado = $_POST['txtnombre'];
         $categorias_personalizado = $_POST['event-dropdown'];
-        $categorias_personalizado_encode = json_encode($categorias_personalizado);
+//        $categorias_personalizado_encode = json_encode($categorias_personalizado);
+
+        $categories = [];
+        $deleteCategories = [];
+
+        foreach ($categorias_personalizado as $category_dropdown) {
+
+            $category = get_term($category_dropdown);
+
+            if (!empty($category)){
+
+                $categoryItem = $category;
+
+                while($category->parent !== 0){
+
+                    if (in_array($category->parent, $categorias_personalizado)){
+                        $deleteCategories[] = $category->parent;
+                    }
+
+                    $category = get_term($category->parent);
+                }
+
+                $categories[] = $categoryItem->term_id;
+            }
+        }
+
+        $iterableCategories = $categories;
+
+        foreach ($deleteCategories as $deleteCategory) {
+            foreach ($iterableCategories as $key => $category) {
+                if ($deleteCategory === $category){
+                    unset($categories[$key]);
+                }
+            }
+        }
+
+        $categorias_personalizado_encode = [];
+
+        foreach ($categories as $item) {
+            $categorias_personalizado_encode[] = strval($item);
+        }
+
+        $categorias_personalizado_encode = json_encode($categorias_personalizado_encode);
 
         $datos = [
             'PersonalizadoId' => null,
@@ -69,8 +111,7 @@ function createPersonalizado($wpdb){
             'PersonalizadoCategorias' => $categorias_personalizado_encode
         ];
 
-        var_dump($datos);
-        //$wpdb->insert($tabla_personalizado, $datos);
+        $wpdb->insert($tabla_personalizado, $datos);
     }
 }
 

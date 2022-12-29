@@ -409,7 +409,7 @@ li.product .add_to_cart_button, .qty, .quantity, .product-quantity , .stock.in-s
 /*    width: 100%;*/
 /*}*/
 .input_formulario {
-	width: 300px;
+	width: 100%;
     border-radius: 4px;
     margin: 5px 0;
     padding: 7px 10px;
@@ -418,7 +418,7 @@ li.product .add_to_cart_button, .qty, .quantity, .product-quantity , .stock.in-s
     height: 36px;
 }
 .select_input_formulario {
-	width: 300px;
+	width: 100%;
     border-radius: 4px;
     margin: 5px 0;
     padding: 7px 10px;
@@ -427,12 +427,12 @@ li.product .add_to_cart_button, .qty, .quantity, .product-quantity , .stock.in-s
     height: 36px;
 }
 .h2_contenedor_tabla {
-    margin-left: -70px;
+    /*margin-left: -70px;*/
 }
 .contenedor_tabla {
-    width: 80% !important;
-    margin-top: 30px;
-    margin-left: -70px;
+    /*width: 80% !important;*/
+    /*margin-top: 30px;*/
+    /*margin-left: -70px;*/
     border-style: solid none none none;
     border-width: 1px;
     border-color: #0a4b78;
@@ -472,7 +472,7 @@ li.product .add_to_cart_button, .qty, .quantity, .product-quantity , .stock.in-s
     font-size: 1.2rem;
     border-radius: 0.75em;
     padding: 0 60px;
-	width: 25em;
+	width: 100%;
 }
 .boton_pedir_presupuesto:hover {
     background-color: #BE305A;
@@ -799,11 +799,11 @@ li.product .add_to_cart_button, .qty, .quantity, .product-quantity , .stock.in-s
 
     /*   seccion pedir presupuesto   */
     #contenedor_pedir_presup {
-        display: grid;
-        grid-template-columns: 300px;
+        /*display: grid;*/
+        /*grid-template-columns: 300px;*/
     }
     #content_form_presup {
-        margin-left: 10px;
+        /*margin-left: 10px;*/
     }
     .contenedor_tarjeta_presup {
         margin-left: 10px;
