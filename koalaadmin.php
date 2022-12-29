@@ -277,16 +277,32 @@ function Mostrar_Contenido(){
 
 //  ---------------------------------------------   //
 
-add_filter( 'woocommerce_review_order_before_payment', 'get_review_order' );
-function get_review_order(): void
+add_filter( 'woocommerce_review_order_before_payment', 'wp_koala_woocommerce_review_order_before_payment_action' );
+function wp_koala_woocommerce_review_order_before_payment_action()
 {
-    echo "<div class='row align-items-center mb-5'>
+    $cart_data = WC()->cart->get_cart();
+
+    $alertVisibility = true;
+
+    if (isset($cart_data['img_ruta1'])){
+        $alertVisibility = false;
+    }else if (isset($cart_data['img_ruta2'])){
+        $alertVisibility = false;
+    }else if (isset($cart_data['img_ruta3'])){
+        $alertVisibility = false;
+    }else if (isset($cart_data['img_ruta4'])){
+        $alertVisibility = false;
+    }
+
+    if ($alertVisibility){
+        echo "<div class='row align-items-center mb-5'>
                 <div class='col-12'>
                     <div class='alert alert-warning shadow-sm' role='alert'>
                       <span><strong>No has subido ningún archivo </strong> para las personalizaciones, si quieres, puedes enviarla más tarde al correo a: <a href='mailto:soporte@hola.com'>soporte@hola.com</a></span>
                     </div>
                 </div>
            </div>";
+    }
 }
 
 //      ---------------------------------------------       //
@@ -1617,8 +1633,6 @@ function dcms_add_field_to_order( $item, $cart_item_key, $values, $order ) {
         }
     }
 
-
-
     if ( isset($values['embolsado']) && $values['embolsado'] == 1){
         $item->add_meta_data( 'Embolsado', 'Si', true );
 
@@ -1647,6 +1661,7 @@ function dcms_add_field_to_order( $item, $cart_item_key, $values, $order ) {
         $item->add_meta_data( 'Fecha de Entrega', $values['input_fecha_seleccionada'], true );
     }
 }
+
 add_action( 'woocommerce_checkout_create_order_line_item', 'dcms_add_field_to_order', 10, 4 );
 
 
