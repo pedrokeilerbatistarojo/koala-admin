@@ -341,10 +341,56 @@ function dcms_display_field() {
     $nonbre_del_producto = $product->get_name();
     $categorias_del_producto = $product->get_category_ids();
 
+    //
+    $categories = [];
+    $deleteCategories = [];
+
+    foreach ($categorias_del_producto as $category_dropdown) {
+
+        $category = get_term($category_dropdown);
+
+        if (!empty($category)){
+
+            $categoryItem = $category;
+
+            while($category->parent !== 0){
+
+                if (in_array($category->parent, $categorias_del_producto)){
+                    $deleteCategories[] = $category->parent;
+                }
+
+                $category = get_term($category->parent);
+            }
+
+            $categories[] = $categoryItem->term_id;
+        }
+    }
+
+    $iterableCategories = $categories;
+
+    foreach ($deleteCategories as $deleteCategory) {
+        foreach ($iterableCategories as $key => $category) {
+            if ($deleteCategory === $category){
+                unset($categories[$key]);
+            }
+        }
+    }
+
+    $categorias_product_low_level = [];
+
+    foreach ($categories as $item) {
+        $categorias_product_low_level[] = strval($item);
+    }
+
+    $categorias_del_producto = $categorias_product_low_level;
+
+    //
     $personalizado_id = '';
     $bandera_mostrar = false;
 
     $list_personalizados = PersonalizadosLista();
+
+    //echo '<pre>'; echo print_r($list_personalizados); echo '</pre>';
 
     foreach ($list_personalizados as $perso){
         $personalizado_id_ = $perso['PersonalizadoId'];
@@ -352,15 +398,19 @@ function dcms_display_field() {
         $personalizado_categorias = $perso['PersonalizadoCategorias'];
         $personalizado_categorias_decode = json_decode($personalizado_categorias, ARRAY_A);
 
-//        if($personalizado_nombre === $nonbre_del_producto ){
-
-            $lista_resultante1 = array_diff($categorias_del_producto, $personalizado_categorias_decode);
-            $lista_resultante2 = array_diff($personalizado_categorias_decode, $categorias_del_producto );
-
-            if(!$lista_resultante1 & !$lista_resultante2){
+        if (!empty($categorias_del_producto) && in_array($categorias_del_producto[0], $personalizado_categorias_decode)){
                 $personalizado_id = $personalizado_id_;
                 $bandera_mostrar = true;
-            }
+        }
+
+//        if($personalizado_nombre === $nonbre_del_producto ){
+//            $lista_resultante1 = array_diff($categorias_del_producto, $personalizado_categorias_decode);
+//            $lista_resultante2 = array_diff($personalizado_categorias_decode, $categorias_del_producto );
+//
+//            if(!$lista_resultante1 & !$lista_resultante2){
+//                $personalizado_id = $personalizado_id_;
+//                $bandera_mostrar = true;
+//            }
 //        }
     }
 
@@ -431,8 +481,6 @@ function dcms_display_field() {
     $seccion2 = "         <button type='button' class='collapsible' id='seccion_personalizalo'>Personalízalo!<label id='label_cuantos' > - Posiciones Seleccionadas:</label> <label id='partes_escog' style='margin-left: 5px;'></label> <input type='text' id='input_posiciones_seleccionadas' name='input_posiciones_seleccionadas' value='' hidden><input type='text' id='input_serigrafias' name='input_serigrafias' value='' hidden><input type='text' id='precios_serigrafias' name='precios_serigrafias' value='' hidden></button>";
     $seccion2 .= "            <div class='content' id='content_personalizalo'>";
     $seccion2 .= "                <div class='row' id='contenedor_partes'>";
-
-
 
     for ($i = 0; $i < count($parted_del_personalizado); $i++){
         //  boton 1 //
