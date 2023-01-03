@@ -246,7 +246,8 @@ function MenuKoalaAdmin(){
 
 }
 function Mostrar_Contenido(){
-    echo "<h1>contenido de la pagina</h1>";
+    echo "<h1>Calculadora Koala</h1>
+         ";
 }
 
 
@@ -281,17 +282,18 @@ add_filter( 'woocommerce_review_order_before_payment', 'wp_koala_woocommerce_rev
 function wp_koala_woocommerce_review_order_before_payment_action()
 {
     $cart_data = WC()->cart->get_cart();
-
     $alertVisibility = true;
 
-    if (isset($cart_data['img_ruta1'])){
-        $alertVisibility = false;
-    }else if (isset($cart_data['img_ruta2'])){
-        $alertVisibility = false;
-    }else if (isset($cart_data['img_ruta3'])){
-        $alertVisibility = false;
-    }else if (isset($cart_data['img_ruta4'])){
-        $alertVisibility = false;
+    foreach ($cart_data as $cart_item_key => $cart_item) {
+        if (isset($cart_item['img_ruta1'])){
+            $alertVisibility = false;
+        }else if (isset($cart_item['img_ruta2'])){
+            $alertVisibility = false;
+        }else if (isset($cart_item['img_ruta3'])){
+            $alertVisibility = false;
+        }else if (isset($cart_item['img_ruta4'])){
+            $alertVisibility = false;
+        }
     }
 
     if ($alertVisibility){
@@ -335,7 +337,6 @@ function dcms_display_field() {
         $variaciones_del_producto_encode = json_encode($variaciones_del_producto);
     }
 
-
     //  validacion para mostrar
     $nonbre_del_producto = $product->get_name();
     $categorias_del_producto = $product->get_category_ids();
@@ -344,6 +345,7 @@ function dcms_display_field() {
     $bandera_mostrar = false;
 
     $list_personalizados = PersonalizadosLista();
+
     foreach ($list_personalizados as $perso){
         $personalizado_id_ = $perso['PersonalizadoId'];
         $personalizado_nombre = $perso['PersonalizadoNombre'];
@@ -364,7 +366,7 @@ function dcms_display_field() {
 
     $product_url = get_permalink($id_del_producto);
 
-    if($bandera_mostrar != false){
+    if($bandera_mostrar){
 
     echo "
         <div id='contenedor_general' style=' display: none !important;'>
@@ -374,8 +376,6 @@ function dcms_display_field() {
     ";
 
 //    cuantos
-
-
 
         echo "
            <button type='button' class='collapsible' id='seccion_cuantos'>Cuántos?<label id='label_cuantos' > - Cantidad Seleccionada: </label><label id='cant_escog'></label><input type='text' id='input_cantidad_seleccionada' name='input_cantidad_seleccionada' value='' hidden></button>
@@ -457,7 +457,9 @@ function dcms_display_field() {
 
     if($serigrafias_de_parte1){
         $seccion2 .= "                <div class='col-lg-3 col-sm-6 mt-4'>";
-		$seccion2 .= "                <img src='$img1' class='img_partes mb-3' width='60' height='60' >";
+        if(!empty($img1)){
+            $seccion2 .= "                <img src='$img1' class='img_partes mb-3' width='60' height='60' >";
+        }
         $seccion2 .= "                    <input name='parte1' id='btn_parte1' type='button' class='btn_partes w-100' value='$nombre_btn_parte1' data-id='$id_btn_parte1'>";
         $seccion2 .= "                      <div class='cont_ser_resp'>";
         for ($i = 0; $i < count($serigrafias_de_parte1); $i++){
@@ -589,7 +591,9 @@ function dcms_display_field() {
     $serigrafias_de_parte2 = SerigrafiaxId($id_btn_parte2);
     if($serigrafias_de_parte2){
         $seccion2 .= "                <div class='col-lg-3 col-sm-6 mt-4'>";
-		$seccion2 .= "                <img src='$img2' class='img_partes mb-3' width='60' height='60' >";
+        if (!empty($img2)){
+            $seccion2 .= "                <img src='$img2' class='img_partes mb-3' width='60' height='60' >";
+        }
         $seccion2 .= "                    <input name='parte2' id='btn_parte2' type='button' class='btn_partes w-100' value='$nombre_btn_parte2' data-id='$id_btn_parte2' >";
         $seccion2 .= "                      <div class='cont_ser_resp'>";
         for ($i = 0; $i < count($serigrafias_de_parte2); $i++){
@@ -721,7 +725,9 @@ function dcms_display_field() {
     $serigrafias_de_parte3 = SerigrafiaxId($id_btn_parte3);
     if($serigrafias_de_parte3){
         $seccion2 .= "                <div class='col-lg-3 col-sm-6 mt-4'>";
-		$seccion2 .= "                <img src='$img3' class='img_partes mb-3' width='60' height='60' >";
+        if (!empty($img3)){
+            $seccion2 .= "                <img src='$img3' class='img_partes mb-3' width='60' height='60' >";
+        }
         $seccion2 .= "                    <input name='parte3' id='btn_parte3' type='button' class='btn_partes w-100' value='$nombre_btn_parte3' data-id='$id_btn_parte3'>";
         $seccion2 .= "                      <div class='cont_ser_resp'>";
         for ($i = 0; $i < count($serigrafias_de_parte3); $i++){
@@ -855,7 +861,9 @@ function dcms_display_field() {
     $serigrafias_de_parte4 = SerigrafiaxId($id_btn_parte4);
     if($serigrafias_de_parte4){
         $seccion2 .= "                <div class='col-lg-3 col-sm-6 mt-4'>";
-		$seccion2 .= "                <img src='$img4' class='img_partes mb-3' width='60' height='60' >";
+        if(!empty($img4)){
+            $seccion2 .= "                <img src='$img4' class='img_partes mb-3' width='60' height='60' >";
+        }
         $seccion2 .= "                    <input name='parte4' id='btn_parte4' type='button' class='btn_partes w-100' value='$nombre_btn_parte4' data-id='$id_btn_parte4'>";
         $seccion2 .= "                      <div class='cont_ser_resp'>";
 
@@ -987,18 +995,17 @@ function dcms_display_field() {
         $seccion2 .= "                </div>";
     }
 
-    $seccion2 .=    "            </div>";
-    $seccion2 .= "            </div>";
-
-    $seccion2 .= "            <div class='row my-4'>";
+        $seccion2 .= "            <div class='row my-4'>";
         $seccion2 .= "            <div class='col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-6 offset-xl-6 offset-lg-4 offset-md-0 offset-sm-0 offset-xs-0'>";
         $seccion2 .=    "            <input type='button' class='sin_estampado w-100' id='sin_estampado' name='sin_estampado' value='Producto sin Estampado'>";
         $seccion2 .= "            </div>";
         $seccion2 .= "            <div class='col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-6'>";
         $seccion2 .=    "            <input type='button' class='confirmar_estampado w-100' id='confirmar_estampado' value='Confirmar Estampado'>";
         $seccion2 .= "            </div>";
-    $seccion2 .= "            </div>";
+        $seccion2 .= "            </div>";
 
+    $seccion2 .=    "            </div>";
+    $seccion2 .= "            </div>";
 
     echo $seccion2;
 

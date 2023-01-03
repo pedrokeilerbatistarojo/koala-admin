@@ -27,11 +27,25 @@ jQuery(document).ready(function($){
                     content_cuantos.style.setProperty('display', 'block');
 
                    // $("html, body").animate({ scrollTop: $('#'+id_salto).offset().top }, 2000);
-					$("html, body").animate({ scrollTop: $('#tab-description').offset().top }, 1800);
+					$("html, body").animate({ scrollTop: $('#seccion_cuantos').offset().top }, 500);
              
                 }
             }
         }
     });
+
+    $("#preconfirmar").click(function () {
+        // let elToScroll = document.getElementById('button_seccion_cuando')
+        // let rect = elToScroll.getBoundingClientRect()
+        // console.log(rect)
+
+        $("html, body").animate({ scrollTop: $('#button_seccion_cuando').offset().top }, 500);
+
+        // window.scroll({
+        //     top: 1500,
+        //     left: 100,
+        //     behavior: 'smooth'
+        // });
+    })
 
 });

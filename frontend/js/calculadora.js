@@ -157,6 +157,4 @@ jQuery(document).ready(function($){
         }
     });
 
-
-
 });
